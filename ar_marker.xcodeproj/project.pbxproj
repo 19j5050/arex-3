@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17392EC62696F23300B4A510 /* y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17392EC52696F23300B4A510 /* y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3 */; };
-		17392EC8269FD85B00B4A510 /* y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17392EC7269FD85A00B4A510 /* y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3 */; };
+		17850128271836C500D3A925 /* jojia2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17850127271836C500D3A925 /* jojia2.mp3 */; };
+		1785012A271836F000D3A925 /* jojia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17850129271836F000D3A925 /* jojia.mp3 */; };
 		17AF48BB265B41B200B867D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48BA265B41B200B867D6 /* AppDelegate.swift */; };
 		17AF48BD265B41B200B867D6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48BC265B41B200B867D6 /* art.scnassets */; };
 		17AF48BF265B41B200B867D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48BE265B41B200B867D6 /* ViewController.swift */; };
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17392EC52696F23300B4A510 /* y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3"; path = "../../../../../Desktop/y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3"; sourceTree = "<group>"; };
-		17392EC7269FD85A00B4A510 /* y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3"; path = "../../../y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3"; sourceTree = "<group>"; };
+		17850127271836C500D3A925 /* jojia2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jojia2.mp3; sourceTree = "<group>"; };
+		17850129271836F000D3A925 /* jojia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jojia.mp3; sourceTree = "<group>"; };
 		17AF48B7265B41B200B867D6 /* arex-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "arex-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF48BA265B41B200B867D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17AF48BC265B41B200B867D6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		17AF48B9265B41B200B867D6 /* arex-3 */ = {
 			isa = PBXGroup;
 			children = (
-				17392EC52696F23300B4A510 /* y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3 */,
-				17392EC7269FD85A00B4A510 /* y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3 */,
+				17850127271836C500D3A925 /* jojia2.mp3 */,
+				17850129271836F000D3A925 /* jojia.mp3 */,
 				17AF48BA265B41B200B867D6 /* AppDelegate.swift */,
 				17AF48BC265B41B200B867D6 /* art.scnassets */,
 				17AF48BE265B41B200B867D6 /* ViewController.swift */,
@@ -237,10 +237,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17392EC8269FD85B00B4A510 /* y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური.mp3 in Resources */,
-				17392EC62696F23300B4A510 /* y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე.mp3 in Resources */,
 				17AF48BD265B41B200B867D6 /* art.scnassets in Resources */,
+				1785012A271836F000D3A925 /* jojia.mp3 in Resources */,
 				17AF48C7265B41B900B867D6 /* LaunchScreen.storyboard in Resources */,
+				17850128271836C500D3A925 /* jojia2.mp3 in Resources */,
 				17AF48C4265B41B900B867D6 /* Assets.xcassets in Resources */,
 				17AF48C2265B41B200B867D6 /* Main.storyboard in Resources */,
 			);
