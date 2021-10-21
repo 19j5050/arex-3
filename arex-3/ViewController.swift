@@ -208,7 +208,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
             node.addChildNode(modelNode)
                     
             // 再生する audio ファイルのパスを取得
-            let audioPath = Bundle.main.path(forResource: "y2mate.com -  ირაკლი ახალაია Irakli Akhalaia  Fanduri ფანდური", ofType:"mp3")!
+            let audioPath = Bundle.main.path(forResource: "jojia", ofType:"mp3")!
             let audioUrl = URL(fileURLWithPath: audioPath)
             // auido を再生するプレイヤーを作成する
             var audioError:NSError?
@@ -239,7 +239,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
             node.addChildNode(modelNode2)
             
             // 再生する audio ファイルのパスを取得
-            let audioPath2 = Bundle.main.path(forResource: "y2mate.com - ალელუია იავნანა  Hallelujah Lullaby  ნატო კახიძე ეკა მამალაძე ვახტანგ კახიძე", ofType:"mp3")!
+            let audioPath2 = Bundle.main.path(forResource: "jojia2", ofType:"mp3")!
             let audioUrl = URL(fileURLWithPath: audioPath2)
             
             // auido を再生するプレイヤーを作成する
