@@ -15,8 +15,6 @@
 		17AF48C2265B41B200B867D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C0265B41B200B867D6 /* Main.storyboard */; };
 		17AF48C4265B41B900B867D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C3265B41B900B867D6 /* Assets.xcassets */; };
 		17AF48C7265B41B900B867D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C5265B41B900B867D6 /* LaunchScreen.storyboard */; };
-		17AF48D2265B41B900B867D6 /* arex_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48D1265B41B900B867D6 /* arex_3Tests.swift */; };
-		17AF48DD265B41B900B867D6 /* arex_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48DC265B41B900B867D6 /* arex_3UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +46,7 @@
 		17AF48C6265B41B900B867D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17AF48C8265B41B900B867D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AF48CD265B41B900B867D6 /* arex-3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "arex-3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17AF48D1265B41B900B867D6 /* arex_3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arex_3Tests.swift; sourceTree = "<group>"; };
-		17AF48D3265B41B900B867D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AF48D8265B41B900B867D6 /* arex-3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "arex-3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17AF48DC265B41B900B867D6 /* arex_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arex_3UITests.swift; sourceTree = "<group>"; };
-		17AF48DE265B41B900B867D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				17AF48B9265B41B200B867D6 /* arex-3 */,
-				17AF48D0265B41B900B867D6 /* arex-3Tests */,
-				17AF48DB265B41B900B867D6 /* arex-3UITests */,
 				17AF48B8265B41B200B867D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,24 +106,6 @@
 				17AF48C8265B41B900B867D6 /* Info.plist */,
 			);
 			path = "arex-3";
-			sourceTree = "<group>";
-		};
-		17AF48D0265B41B900B867D6 /* arex-3Tests */ = {
-			isa = PBXGroup;
-			children = (
-				17AF48D1265B41B900B867D6 /* arex_3Tests.swift */,
-				17AF48D3265B41B900B867D6 /* Info.plist */,
-			);
-			path = "arex-3Tests";
-			sourceTree = "<group>";
-		};
-		17AF48DB265B41B900B867D6 /* arex-3UITests */ = {
-			isa = PBXGroup;
-			children = (
-				17AF48DC265B41B900B867D6 /* arex_3UITests.swift */,
-				17AF48DE265B41B900B867D6 /* Info.plist */,
-			);
-			path = "arex-3UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17AF48D2265B41B900B867D6 /* arex_3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17AF48DD265B41B900B867D6 /* arex_3UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
