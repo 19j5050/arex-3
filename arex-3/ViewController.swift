@@ -14,20 +14,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
     
+    var dancer: Dancer? = nil
+    var instrument: Instrument? = nil
+    var trickPhoto: TrickPhoto? = nil
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画面がタップされたことを検知
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapCallback(_:)))
         sceneView.addGestureRecognizer(tapGestureRecognizer)
         
-        initSalamuriPlayer()
-        initPanduriPlayer()
+//        initSalamuriPlayer()
+//        initPanduriPlayer()
         
         //ラベルのテキストを変更
-        label.text="მოგესალმებით"
+//        label.text="მოგესალმებით"
+        label.text="ようこそ"
         label1.text="楽器をタップ"
         // UILabelの文字列から、attributedStringを作成
         let attrText = NSMutableAttributedString(string: label.text!)
@@ -50,52 +54,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         //sceneView内に表示するNodeに無指向性の光を追加するオプションです。
         // 画像認識の参照用画像をアセットから取得
         let configuration = ARImageTrackingConfiguration()
-        configuration.trackingImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)!
+        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) {
+            configuration.trackingImages = trackedImages
+        }
         sceneView.session.run(configuration)
-    }
-    
-    /// サラムリの音声を初期化するメソッド
-    func initSalamuriPlayer() {
-        // 再生する audio ファイルのパスを取得
-        let audioPath2 = Bundle.main.path(forResource: "jojia2", ofType:"mp3")!
-        let audioUrl = URL(fileURLWithPath: audioPath2)
-        
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            salamuriPlayer = try AVAudioPlayer(contentsOf: audioUrl)
-        } catch let error as NSError {
-            audioError = error
-            salamuriPlayer = nil
-        }
-        // エラーが起きたとき
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        
-        salamuriPlayer.delegate = self
-        salamuriPlayer.prepareToPlay()
-    }
-    
-    /// パンドゥリの音声を初期化するメソッド
-    func initPanduriPlayer() {
-        // 再生する audio ファイルのパスを取得
-        let audioPath = Bundle.main.path(forResource: "jojia", ofType:"mp3")!
-        let audioUrl = URL(fileURLWithPath: audioPath)
-        // auido を再生するプレイヤーを作成する
-        var audioError:NSError?
-        do {
-            panduliPlayer = try AVAudioPlayer(contentsOf: audioUrl)
-        } catch let error as NSError {
-            audioError = error
-            panduliPlayer = nil
-        }
-        // エラーが起きたとき
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        panduliPlayer.delegate = self
-        panduliPlayer.prepareToPlay()
     }
     
     @objc private func tapCallback(_ sender: UITapGestureRecognizer) {
@@ -105,118 +67,112 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         //タップされたノードを検出
         if let result = results.last {
             guard let hitNodeName2 = result.node.name else { return }
-            guard let targetNode = result.node.parent else { return }
+            
+            print(hitNodeName2)
             
             switch hitNodeName2 {
             case "obj_0_マテリアル":
-                self.playSalamuri(targetNode: targetNode)
+                guard let instrument = instrument else {
+                    return
+                }
+                label1.text="サラムリ"
+                if (instrument.isPlay) {
+                    instrument.pause()
+                    label1.text="楽器をタップ"
+//                    instrument.swichChara()
+                }else {
+                    instrument.play()
+                }
             case "obj_0_color_15277357":
-                self.playPanduri(targetNode: targetNode)
+                guard let instrument = instrument else {
+                    return
+                }
+                label1.text="パンドゥリ"
+                if (instrument.isPlay) {
+                    instrument.pause()
+                    label1.text="楽器をタップ"
+                }else {
+                    instrument.play()
+                }
+            case "Cube":
+                guard let dancer = dancer else {
+                    return
+                }
+                if (dancer.danced) {
+                    dancer.end()
+                } else {
+                    dancer.start()
+                }
             default:
                 return
             }
         }
     }
     
-    /// パンドゥリを再生するメソッド
-    /// もし、サラムリが再生されていたら止める
-    func playPanduri(targetNode: SCNNode) {
-        print("*** playPanduri() ***")
-        label1.text = "ალელუია იავნანა"
-        label1.font = UIFont.systemFont(ofSize: 36)
-        
-        let actMove = SCNAction.move(by: SCNVector3(0, 0, 0.1), duration: 0.2)
-        targetNode.runAction(actMove)
-        
-        // *** サラムリを止める ***
-        if salamuriPlayer.isPlaying {
-            salamuriPlayer.stop()
-        }
-        
-        //音楽再生停止
-        if ( panduliPlayer.isPlaying ){
-            panduliPlayer.stop()
-            label1.text="楽器をタップ"
-            
-            //button.setTitle("Stop", for: UIControl.State())
-        } else{
-            panduliPlayer.play()
-            //button.setTitle("Play", for: UIControl.State())
-        }
-    }
-    
-    /// サラムリを再生するメソッド
-    /// もし、パンドゥリが再生されていたら止める
-    func playSalamuri(targetNode: SCNNode) {
-        print("*** playSaramuri() ***")
-        label1.text = "ალელუია იავნანა"
-        label1.font = UIFont.systemFont(ofSize: 36)
-        
-        let actMove2 = SCNAction.move(by: SCNVector3(0, 0, 0.1), duration: 0.2)
-        targetNode.runAction(actMove2)
-        
-        // *** パンドゥリを止める ***
-        if panduliPlayer.isPlaying {
-            panduliPlayer.stop()
-        }
-        
-        //音楽再生停止
-        if ( salamuriPlayer.isPlaying ){
-            print("audioPlayer.isPlaying")
-            salamuriPlayer.stop()
-            label1.text="楽器をタップ"
-            //button.setTitle("Stop", for: UIControl.State())
-        } else{
-            print("!audioPlayer.isPlaying")
-            salamuriPlayer.play()
-            //doli.runAction(SCNAction .repeatForever(SCNAction .rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
-            //button.setTitle("Play", for: UIControl.State())
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        let configuration = ARImageTrackingConfiguration()
+//
+//        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
+//            configuration.trackingImages = trackedImages
+//        }
+//        sceneView.session.run(configuration)
+//    }
     
     // マーカーが検出されたとき呼ばれる
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         if(anchor.name == "MusicTicket_Panduri") {
-            // scnファイルからシーンを読み込む
-            let scene = SCNScene(named: "art.scnassets/panduri.scn")
-            // シーンからノードを検索
-            let modelNode = (scene?.rootNode.childNode(withName: "obj_0_color_15277357", recursively: false))!
-            //モデルが回り続ける
-            let rotate = SCNAction.rotateBy(x: 0, y: 1.28, z: 0, duration: 1)
-            modelNode.runAction(SCNAction.repeatForever(rotate))
-            // 検出面の子要素にする
-            modelNode.position = SCNVector3(0, 0, 0)
-            node.addChildNode(modelNode)
+            instrument = Instrument(
+                sceneName: "art.scnassets/panduri.scn",
+                nodeName: "obj_0_color_15277357",
+                parent: node,
+                audioName: "stringed instrument",
+                delegate: self
+            )
         }
         
         if(anchor.name == "MusicTicket_Salamuri") {
-            // scnファイルからシーンを読み込む
-            let scene = SCNScene(named: "art.scnassets/saramuri.scn")
-            // シーンからノードを検索
-            let modelNode2 = (scene?.rootNode.childNode(withName: "obj_0_マテリアル", recursively: false))!
-            //モデルが回り続ける
-            let rotate = SCNAction.rotateBy(x: 0, y: 1.28, z: 0, duration: 1)
-            modelNode2.runAction(SCNAction.repeatForever(rotate))
-            // 検出面の子要素にする
-            modelNode2.position = SCNVector3(0, 0, 0)
-            node.addChildNode(modelNode2)
+            instrument = Instrument(
+                sceneName: "art.scnassets/saramuri.scn",
+                nodeName: "obj_0_マテリアル",
+                parent: node,
+                audioName: "stringed instrument2",
+                delegate: self
+            )
         }
         
-        // ボタンがタップされた時の処理
-        /*@IBAction func buttonTapped(_ sender : Any) {
-         if ( audioPlayer.isPlaying ){
-         audioPlayer.stop()
-         button.setTitle("Stop", for: UIControl.State())
-         }
-         else{
-         audioPlayer.play()
-         button.setTitle("Play", for: UIControl.State())
-         }
-         }*/
-        
-        //    func deg2rad(_ number: CGFloat) -> CGFloat {
-        //        return number * .pi / 180
-        //    }
+        if(anchor.name == "MusicTicket_Doli") {
+            dancer = Dancer(musicPath: "stringed instrument3", parent: node)
+        }
+        if(anchor.name == "MusicTicket_chonguri") {
+            trickPhoto = TrickPhoto(movieName: "jojiaMovie", node: node, for: anchor)
+//            guard let imageAnchor = anchor as? ARImageAnchor,
+//                        let fileUrlString = Bundle.main.path(forResource: "jojiaMovie", ofType: "mp4")
+//            else {
+//                            return
+//            }
+//            let videoItem = AVPlayerItem(url: URL(fileURLWithPath: fileUrlString))
+//            let player = AVPlayer(playerItem: videoItem)
+//            player.play()
+//
+//            let size = CGSize(width: 480, height: 360)
+//            let videoScene = SKScene(size: size)
+//
+//            let videoNode = SKVideoNode(avPlayer: player)
+//            videoNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+//            videoNode.yScale = -1.0
+//
+//            videoScene.addChild(videoNode)
+//
+//            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
+//                                    height: imageAnchor.referenceImage.physicalSize.height)
+//            plane.firstMaterial?.diffuse.contents = videoScene
+//            let planeNode = SCNNode(geometry: plane)
+//            planeNode.eulerAngles.x = -Float.pi / 2
+//            node.addChildNode(planeNode)
+        }
     }
+    
 }

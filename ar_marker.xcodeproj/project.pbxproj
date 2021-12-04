@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17850128271836C500D3A925 /* jojia2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17850127271836C500D3A925 /* jojia2.mp3 */; };
-		1785012A271836F000D3A925 /* jojia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17850129271836F000D3A925 /* jojia.mp3 */; };
+		179FDD92274F4126000ECD56 /* stringed instrument.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 179FDD91274F4125000ECD56 /* stringed instrument.mp3 */; };
 		17AF48BB265B41B200B867D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48BA265B41B200B867D6 /* AppDelegate.swift */; };
 		17AF48BD265B41B200B867D6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48BC265B41B200B867D6 /* art.scnassets */; };
 		17AF48BF265B41B200B867D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF48BE265B41B200B867D6 /* ViewController.swift */; };
 		17AF48C2265B41B200B867D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C0265B41B200B867D6 /* Main.storyboard */; };
 		17AF48C4265B41B900B867D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C3265B41B900B867D6 /* Assets.xcassets */; };
 		17AF48C7265B41B900B867D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17AF48C5265B41B900B867D6 /* LaunchScreen.storyboard */; };
+		17BD82EF2758A825003D27BF /* Dancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD82EE2758A825003D27BF /* Dancer.swift */; };
+		17BD82F22758E6D4003D27BF /* TrickPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD82F12758E6D4003D27BF /* TrickPhoto.swift */; };
+		17BD82F42758E8B8003D27BF /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD82F32758E8B8003D27BF /* Instrument.swift */; };
+		17BD82F6275A496D003D27BF /* stringed instrument4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD82F5275A496D003D27BF /* stringed instrument4.mp3 */; };
+		17BD82F8275A4974003D27BF /* stringed instrument3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD82F7275A4974003D27BF /* stringed instrument3.mp3 */; };
+		17BD82FC275A530C003D27BF /* stringed instrument2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD82FB275A530B003D27BF /* stringed instrument2.mp3 */; };
+		17BD8301275A6C3E003D27BF /* jojiaMovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17BD8300275A6C3E003D27BF /* jojiaMovie.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17850127271836C500D3A925 /* jojia2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jojia2.mp3; sourceTree = "<group>"; };
-		17850129271836F000D3A925 /* jojia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jojia.mp3; sourceTree = "<group>"; };
+		179FDD91274F4125000ECD56 /* stringed instrument.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "stringed instrument.mp3"; sourceTree = "<group>"; };
 		17AF48B7265B41B200B867D6 /* arex-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "arex-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF48BA265B41B200B867D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17AF48BC265B41B200B867D6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -47,6 +52,13 @@
 		17AF48C8265B41B900B867D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AF48CD265B41B900B867D6 /* arex-3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "arex-3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AF48D8265B41B900B867D6 /* arex-3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "arex-3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BD82EE2758A825003D27BF /* Dancer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dancer.swift; sourceTree = "<group>"; };
+		17BD82F12758E6D4003D27BF /* TrickPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrickPhoto.swift; sourceTree = "<group>"; };
+		17BD82F32758E8B8003D27BF /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		17BD82F5275A496D003D27BF /* stringed instrument4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "stringed instrument4.mp3"; sourceTree = "<group>"; };
+		17BD82F7275A4974003D27BF /* stringed instrument3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "stringed instrument3.mp3"; sourceTree = "<group>"; };
+		17BD82FB275A530B003D27BF /* stringed instrument2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "stringed instrument2.mp3"; sourceTree = "<group>"; };
+		17BD8300275A6C3E003D27BF /* jojiaMovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = jojiaMovie.mp4; path = "../../../Documents/プロジェクト後期/jojiaMovie.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +107,11 @@
 		17AF48B9265B41B200B867D6 /* arex-3 */ = {
 			isa = PBXGroup;
 			children = (
-				17850127271836C500D3A925 /* jojia2.mp3 */,
-				17850129271836F000D3A925 /* jojia.mp3 */,
+				179FDD91274F4125000ECD56 /* stringed instrument.mp3 */,
+				17BD82FB275A530B003D27BF /* stringed instrument2.mp3 */,
+				17BD82F7275A4974003D27BF /* stringed instrument3.mp3 */,
+				17BD82F5275A496D003D27BF /* stringed instrument4.mp3 */,
+				17BD8300275A6C3E003D27BF /* jojiaMovie.mp4 */,
 				17AF48BA265B41B200B867D6 /* AppDelegate.swift */,
 				17AF48BC265B41B200B867D6 /* art.scnassets */,
 				17AF48BE265B41B200B867D6 /* ViewController.swift */,
@@ -104,6 +119,9 @@
 				17AF48C3265B41B900B867D6 /* Assets.xcassets */,
 				17AF48C5265B41B900B867D6 /* LaunchScreen.storyboard */,
 				17AF48C8265B41B900B867D6 /* Info.plist */,
+				17BD82EE2758A825003D27BF /* Dancer.swift */,
+				17BD82F12758E6D4003D27BF /* TrickPhoto.swift */,
+				17BD82F32758E8B8003D27BF /* Instrument.swift */,
 			);
 			path = "arex-3";
 			sourceTree = "<group>";
@@ -212,9 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				17AF48BD265B41B200B867D6 /* art.scnassets in Resources */,
-				1785012A271836F000D3A925 /* jojia.mp3 in Resources */,
+				17BD82F8275A4974003D27BF /* stringed instrument3.mp3 in Resources */,
 				17AF48C7265B41B900B867D6 /* LaunchScreen.storyboard in Resources */,
-				17850128271836C500D3A925 /* jojia2.mp3 in Resources */,
+				179FDD92274F4126000ECD56 /* stringed instrument.mp3 in Resources */,
+				17BD82F6275A496D003D27BF /* stringed instrument4.mp3 in Resources */,
+				17BD8301275A6C3E003D27BF /* jojiaMovie.mp4 in Resources */,
+				17BD82FC275A530C003D27BF /* stringed instrument2.mp3 in Resources */,
 				17AF48C4265B41B900B867D6 /* Assets.xcassets in Resources */,
 				17AF48C2265B41B200B867D6 /* Main.storyboard in Resources */,
 			);
@@ -241,7 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BD82F42758E8B8003D27BF /* Instrument.swift in Sources */,
 				17AF48BF265B41B200B867D6 /* ViewController.swift in Sources */,
+				17BD82EF2758A825003D27BF /* Dancer.swift in Sources */,
+				17BD82F22758E6D4003D27BF /* TrickPhoto.swift in Sources */,
 				17AF48BB265B41B200B867D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,13 +441,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D3GD37QCL;
+				DEVELOPMENT_TEAM = 6G8728735D;
 				INFOPLIST_FILE = "arex-3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "blt-sand.arex-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "miu-summer.arex-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,13 +460,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5D3GD37QCL;
+				DEVELOPMENT_TEAM = 6G8728735D;
 				INFOPLIST_FILE = "arex-3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "blt-sand.arex-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "miu-summer.arex-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
