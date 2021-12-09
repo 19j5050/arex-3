@@ -26,9 +26,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapCallback(_:)))
         sceneView.addGestureRecognizer(tapGestureRecognizer)
         
-//        initSalamuriPlayer()
-//        initPanduriPlayer()
-        
         //ラベルのテキストを変更
 //        label.text="მოგესალმებით"
         label.text="ようこそ"
@@ -58,6 +55,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
             configuration.trackingImages = trackedImages
         }
         sceneView.session.run(configuration)
+        
+        let captureBtn = UIButton(
+                    frame: CGRect(x: 0, y: 50, width: 50, height: 50)
+                )
+                captureBtn.backgroundColor = UIColor(
+                    red: 0.1, green: 0.7, blue: 1.0, alpha: 1.0
+                )
+        //        captureBtn.setTitle("capture", for: .normal)
+                captureBtn.addTarget(
+                    self,
+                    action: #selector(capture),
+                    for: .touchUpInside
+                )
+
+        //        self.view.backgroundColor = UIColor(
+        //            red: 0.1, green: 1.0, blue: 0.7, alpha: 1.0
+        //        )
+                self.view.addSubview(captureBtn)
     }
     
     @objc private func tapCallback(_ sender: UITapGestureRecognizer) {
@@ -109,17 +124,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        let configuration = ARImageTrackingConfiguration()
-//
-//        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) {
-//            configuration.trackingImages = trackedImages
-//        }
-//        sceneView.session.run(configuration)
-//    }
-    
     // マーカーが検出されたとき呼ばれる
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
@@ -148,31 +152,27 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         }
         if(anchor.name == "MusicTicket_chonguri") {
             trickPhoto = TrickPhoto(movieName: "jojiaMovie", node: node, for: anchor)
-//            guard let imageAnchor = anchor as? ARImageAnchor,
-//                        let fileUrlString = Bundle.main.path(forResource: "jojiaMovie", ofType: "mp4")
-//            else {
-//                            return
-//            }
-//            let videoItem = AVPlayerItem(url: URL(fileURLWithPath: fileUrlString))
-//            let player = AVPlayer(playerItem: videoItem)
-//            player.play()
-//
-//            let size = CGSize(width: 480, height: 360)
-//            let videoScene = SKScene(size: size)
-//
-//            let videoNode = SKVideoNode(avPlayer: player)
-//            videoNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
-//            videoNode.yScale = -1.0
-//
-//            videoScene.addChild(videoNode)
-//
-//            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
-//                                    height: imageAnchor.referenceImage.physicalSize.height)
-//            plane.firstMaterial?.diffuse.contents = videoScene
-//            let planeNode = SCNNode(geometry: plane)
-//            planeNode.eulerAngles.x = -Float.pi / 2
-//            node.addChildNode(planeNode)
         }
+    }
+    
+    @objc func capture( sender : Any) {
+            print("capture")
+
+            let rect = self.view.bounds
+
+            UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+            let context: CGContext = UIGraphicsGetCurrentContext()!
+            self.view.layer.render(in: context)
+            let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+
+            UIImageWriteToSavedPhotosAlbum(
+                capturedImage, self, #selector(saveError), nil
+            )
+    }
+
+    @objc func saveError( image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+            print("Save finished!")
     }
     
 }

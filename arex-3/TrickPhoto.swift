@@ -21,8 +21,14 @@ class TrickPhoto {
         let videoItem = AVPlayerItem(url: URL(fileURLWithPath: fileUrlString))
         let player = AVPlayer(playerItem: videoItem)
         player.play()
+        
+        //ループ再生
+        player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none;
+        NotificationCenter.default.addObserver(self,selector:#selector(didPlayToEnd),
+            name:NSNotification.Name("AVPlayerItemDidPlayToEndTimeNotification"),
+                                                            object: player.currentItem)
 
-        let size = CGSize(width: 480, height: 360)
+        let size = CGSize(width: 640, height: 360)
         let videoScene = SKScene(size: size)
 
         let videoNode = SKVideoNode(avPlayer: player)
@@ -37,6 +43,12 @@ class TrickPhoto {
         let planeNode = SCNNode(geometry: plane)
         planeNode.eulerAngles.x = -Float.pi / 2
         node.addChildNode(planeNode)
+    }
+    
+    //ループ再生
+    @objc func didPlayToEnd(notification: NSNotification) {
+        let item: AVPlayerItem = notification.object as! AVPlayerItem
+        item.seek(to: CMTime.zero, completionHandler: nil)
     }
     
     func start() {
