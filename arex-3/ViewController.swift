@@ -170,8 +170,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         if(anchor.name == "marker_dance") {
             dancer = Dancer(musicPath: "stringed instrument3", parent: node)
         }
-        if(anchor.name == "MusicTicket_chonguri") {
-            trickPhoto = TrickPhoto(movieName: "jojiaMovie", node: node, for: anchor)
+        if(anchor.name == "marker_movie") {
+            trickPhoto = TrickPhoto(movieName: "jojia_movie", node: node, for: anchor)
         }
     }
     
