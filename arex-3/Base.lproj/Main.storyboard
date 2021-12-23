@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,30 +31,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekI-50-wn3">
-                                <rect key="frame" x="184" y="744" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-o1-oAd">
+                                <rect key="frame" x="20" y="812" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PBt-o1-oAd" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="768" id="AXF-6t-Fqd"/>
                             <constraint firstItem="qK6-sN-OCW" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="EPK-sv-74T"/>
-                            <constraint firstItem="ekI-50-wn3" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="700" id="GZ9-G0-k9J"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="fT4-gA-1Wq" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="XvS-Cd-R91"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PBt-o1-oAd" secondAttribute="trailing" symbolic="YES" id="hsy-BT-OiL"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                             <constraint firstItem="fT4-gA-1Wq" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="163" id="sbt-Jq-upk"/>
+                            <constraint firstItem="PBt-o1-oAd" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leadingMargin" id="wN7-EQ-sGt"/>
                             <constraint firstItem="qK6-sN-OCW" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="598" id="wsK-NV-cpk"/>
-                            <constraint firstItem="ekI-50-wn3" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="yld-rp-hMw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="ekI-50-wn3" id="XL1-0H-fob"/>
                         <outlet property="label" destination="fT4-gA-1Wq" id="Euu-Tg-1WI"/>
                         <outlet property="label1" destination="qK6-sN-OCW" id="7zb-57-80h"/>
+                        <outlet property="label2" destination="PBt-o1-oAd" id="kHb-c3-86c"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
                 </viewController>

@@ -5,6 +5,18 @@
   },
   "resources" : [
     {
+      "filename" : "marker_dance.arreferenceimage"
+    },
+    {
+      "filename" : "marker_movie.arreferenceimage"
+    },
+    {
+      "filename" : "marker_music1.arreferenceimage"
+    },
+    {
+      "filename" : "marker_music2.arreferenceimage"
+    },
+    {
       "filename" : "MusicTicket_chonguri.arreferenceimage"
     },
     {
