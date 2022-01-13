@@ -73,7 +73,7 @@ class Dancer {
         
         // Set up some properties
         node.position = SCNVector3(0, 0, 0)
-//        node.rotation = SCNVector4(1, 0, 0, -0.3 * Double.pi)
+        node.rotation = SCNVector4(1, 0, 0, -0.3 * Double.pi)
         node.scale = SCNVector3(0.015, 0.015, 0.015)
         
         // Add the node to the scene
