@@ -10,17 +10,15 @@ import ARKit
 import AVFoundation
 
 class TrickPhoto {
-    var player: AVAudioPlayer!
+    var player: AVPlayer!
     
     init(movieName: String, node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor,
-                    let fileUrlString = Bundle.main.path(forResource: movieName, ofType: "mp4")
-        else {
-                        return
+            let fileUrlString = Bundle.main.path(forResource: movieName, ofType: "mp4") else {
+                return
         }
         let videoItem = AVPlayerItem(url: URL(fileURLWithPath: fileUrlString))
-        let player = AVPlayer(playerItem: videoItem)
-        player.play()
+        player = AVPlayer(playerItem: videoItem)
         
         //ループ再生
         player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none;
@@ -28,7 +26,7 @@ class TrickPhoto {
             name:NSNotification.Name("AVPlayerItemDidPlayToEndTimeNotification"),
                                                             object: player.currentItem)
 
-        let size = CGSize(width: 640, height: 360)
+        let size = CGSize(width: 960, height: 540)
         let videoScene = SKScene(size: size)
 
         let videoNode = SKVideoNode(avPlayer: player)
@@ -52,10 +50,10 @@ class TrickPhoto {
     }
     
     func start() {
-        
+        player.play()
     }
     
     func stop() {
-        
+        player.pause()
     }
 }

@@ -172,8 +172,31 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         }
         if(anchor.name == "marker_movie") {
             trickPhoto = TrickPhoto(movieName: "jojia_movie", node: node, for: anchor)
+            trickPhoto?.start()
+        }else {
+            trickPhoto?.stop()
         }
     }
+    
+    @objc func capture( sender : Any) {
+                print("capture")
+
+                let rect = self.view.bounds
+
+                UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+                let context: CGContext = UIGraphicsGetCurrentContext()!
+                self.view.layer.render(in: context)
+                let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
+
+                UIImageWriteToSavedPhotosAlbum(
+                    capturedImage, self, #selector(saveError), nil
+                )
+        }
+
+        @objc func saveError( image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+                print("Save finished!")
+        }
     
     // スクリーンショットボタンを押した際のコールバック関数
     //snapshotButtonHandlerを呼び出し
