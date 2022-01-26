@@ -16,6 +16,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
     var dancer: Dancer? = nil
     var instrument: Instrument? = nil
     var trickPhoto: TrickPhoto? = nil
+    
+    var movieisPlay: Bool = false
+    
+    lazy var seekBar = UISlider()
 
     
     override func viewDidLoad() {
@@ -62,14 +66,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         sceneView.session.run(configuration)
         
         //ボタン生成(サイズ)
-        let btn = UIButton(
-            frame: CGRect(x: 0, y: 50, width: 50, height: 50)
-        )
+        let btn = UIButton(frame: CGRect(x: 0, y: 50, width: 50, height: 50))
+        
         //ボタンの色選択
         btn.backgroundColor = UIColor(red: 0.1, green: 0.5, blue: 0.9, alpha: 1.0)
+        btn.setTitle("📸", for: UIControl.State.normal)
         //snapshotButtonHandlerをtarget(関数)として選択
         btn.addTarget(self, action: #selector(self.snapshotButtonHandler(_ :)), for: .touchUpInside)
         view.addSubview(btn)
+        
+        let switchbtn = UIButton(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
+        switchbtn.backgroundColor = UIColor.black
+        switchbtn.setTitle("▶︎Ⅱ", for: UIControl.State.normal)
+        switchbtn.addTarget(self, action: #selector(onButtonTapped), for: UIControl.Event.touchUpInside)
+        view.addSubview(switchbtn)
+        
     }
     
     @objc private func tapCallback(_ sender: UITapGestureRecognizer) {
@@ -145,7 +156,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
     }
     
     // マーカーが検出されたとき呼ばれる
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    @objc func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         if(anchor.name == "marker_music1") {
             instrument = Instrument(
@@ -209,4 +220,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         //完了を報告(all output)
         print("snapshot finished")
     }
+    
+    @objc func onButtonTapped(){
+            if(movieisPlay){
+                trickPhoto?.stop()
+                movieisPlay = false
+            }else{
+                trickPhoto?.start()
+                movieisPlay = true
+            }
+        }
 }

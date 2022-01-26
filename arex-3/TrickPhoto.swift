@@ -12,6 +12,7 @@ import AVFoundation
 class TrickPhoto {
     var player: AVPlayer!
     
+    
     init(movieName: String, node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor,
             let fileUrlString = Bundle.main.path(forResource: movieName, ofType: "mp4") else {
