@@ -11,7 +11,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
     @IBOutlet var sceneView: ARSCNView!//スマホ画面操作
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
+//    @IBOutlet weak var label2: UILabel!
+    
+    @IBOutlet weak var screenShot: UIButton!
     
     var dancer: Dancer? = nil
     var instrument: Instrument? = nil
@@ -35,7 +37,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         //ラベルのテキストを変更
         label.text="მოგესალმებით/ようこそ"
         label1.text="楽器・モデルをタップ"
-        label2.text=""
+//        label2.text=""
         // UILabelの文字列から、attributedStringを作成
         let attrText = NSMutableAttributedString(string: label.text!)
         
@@ -43,13 +45,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         // フォントカラーを設定
         label.textColor = UIColor.green
         label1.textColor = UIColor.blue
-        label2.textColor = UIColor.red
+//        label2.textColor = UIColor.red
         // attributedTextとしてUILabelに追加します.
         label.attributedText = attrText
         // システムフォントをサイズ36に設定
         label.font = UIFont.boldSystemFont(ofSize: 28)
         label1.font = UIFont(name: "BodoniOrnamentsITCTT", size: 36)
-        label2.font = UIFont.systemFont(ofSize: 24)
+//        label2.font = UIFont.systemFont(ofSize: 24)
         
         // デリゲートを設定
         sceneView.delegate = self
@@ -82,6 +84,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
         view.addSubview(switchbtn)
         
     }
+    @IBAction func screenshotButtonTapped(_ sender: Any) {
+    }
     
     @objc private func tapCallback(_ sender: UITapGestureRecognizer) {
         //タップした時にタップした座標を取得する
@@ -100,15 +104,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
                 }
                 label.text=""
                 label1.text=""
-                label2.text="音楽1(曲名)"
-                label2.backgroundColor = UIColor(
-                    red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0
-                )
+//                label2.text="音楽1(曲名)"
+//                label2.backgroundColor = UIColor(
+//                    red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0
+//                )
                 if (instrument.isPlay) {
                     instrument.pause()
                     label.text="მოგესალმებით/ようこそ"
                     label1.text="サラムリ"
-                    label2.text=""
+//                    label2.text=""
 //                    instrument.swichChara()
                 }else {
                     instrument.play()
@@ -119,15 +123,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
                 }
                 label.text=""
                 label1.text=""
-                label2.text="音楽2(曲名)"
-                label2.backgroundColor = UIColor(
-                    red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0
-                )
+//                label2.text="音楽2(曲名)"
+//                label2.backgroundColor = UIColor(
+//                    red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0
+//                )
                 if (instrument.isPlay) {
                     instrument.pause()
                     label.text="მოგესალმებით/ようこそ"
                     label1.text="パンドゥリ"
-                    label2.text=""
+//                    label2.text=""
                 }else {
                     instrument.play()
                 }
@@ -137,15 +141,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate
                 }
                 label.text=""
                 label1.text=""
-                label2.text="音楽3(曲名)"
-                label2.backgroundColor = UIColor(
-                    red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0
-                )
+//                label2.text="音楽3(曲名)"
+//                label2.backgroundColor = UIColor(
+//                    red: 1.0, green: 1.0, bl
                 if (dancer.danced) {
                     dancer.end()
                     label.text="მოგესალმებით/ようこそ"
                     label1.text="ダンス"
-                    label2.text=""
+//                    label2.text=""
                 } else {
                     dancer.start()
                 }
